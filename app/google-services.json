@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "563952129026",
+    "project_id": "pulse-f7528",
+    "storage_bucket": "pulse-f7528.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563952129026:android:a65478774216d88566431b",
+        "android_client_info": {
+          "package_name": "com.mirza.pulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeQSP4I1HJKeTForZ6pYe4vW1qZLwR0QU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

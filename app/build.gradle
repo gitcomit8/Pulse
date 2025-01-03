@@ -30,7 +30,9 @@ android {
 }
 
 dependencies {
-
+    implementation libs.play.services.auth.v2070
+    implementation libs.play.services.identity
+    implementation libs.play.services.auth
     implementation platform(libs.firebase.bom)
     implementation libs.firebase.auth
     implementation libs.firebase.firestore

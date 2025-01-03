@@ -12,7 +12,20 @@
           "package_name": "com.mirza.pulse"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "563952129026-3iritt5iu3fdn093vgjb5n4nhk53pcta.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mirza.pulse",
+            "certificate_hash": "9cdb1355a2d070824d186734d2a389211a2bb245"
+          }
+        },
+        {
+          "client_id": "563952129026-k8242knvepcbemejuhn8pkbbd6qcqpe7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCeQSP4I1HJKeTForZ6pYe4vW1qZLwR0QU"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563952129026-k8242knvepcbemejuhn8pkbbd6qcqpe7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

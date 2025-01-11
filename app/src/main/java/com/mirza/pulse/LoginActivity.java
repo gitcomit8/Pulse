@@ -21,11 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-/**
- *  LoginActivity is responsible for handling user authentication.
- *  It provides functionality for users to log in using their email and password,
- *  or through Google Sign-In. It also provides a link to the registration activity for new users.
- */
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;

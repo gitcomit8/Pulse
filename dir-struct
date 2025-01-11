@@ -1,0 +1,33 @@
+app/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/pulse/  <-- Your package name
+│   │   │       ├── auth/             <-- Authentication related classes
+│   │   │       │   ├── LoginActivity.java
+│   │   │       │   ├── RegisterActivity.java
+│   │   │       │   ├── AuthManager.java   <-- Handles Firebase Auth
+│   │   │       ├── models/           <-- Data models (POJOs)
+│   │   │       │   ├── User.java
+│   │   │       │   ├── Channel.java
+│   │   │       │   ├── Message.java
+│   │   │       ├── ui/               <-- Activities and Fragments
+│   │   │       │   ├── MainActivity.java     <-- Main app screen
+│   │   │       │   ├── ChannelListFragment.java
+│   │   │       │   ├── CreateChannelActivity.java
+│   │   │       │   ├── ChatActivity.java
+│   │   │       ├── adapters/         <-- RecyclerView Adapters
+│   │   │       │   ├── ChannelAdapter.java
+│   │   │       │   ├── MessageAdapter.java
+│   │   │       ├── utils/            <-- Utility classes
+│   │   │       │   ├── FirebaseUtil.java      <-- Firestore helper functions
+│   │   │       │   ├── ImageUtils.java        <-- Image handling
+│   │   │       ├── PulseApplication.java <-- Application class for global state
+│   │   ├── res/
+│   │   │   ├── layout/
+│   │   │   ├── values/
+│   │   │   ├── ...
+│   ├── androidTest/
+│   └── test/
+├── build.gradle
+├── ...

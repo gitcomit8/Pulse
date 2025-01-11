@@ -1,4 +1,4 @@
-package com.mirza.pulse;
+package com.mirza.pulse.activities;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.mirza.pulse.R;
 
 /**
  *  RegisterActivity allows a new user to register an account with an email and password.
@@ -24,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
      * Called when the activity is first created. This is where you should do all of your normal
      * static set up: create views, bind data to lists, etc. This method also provides you with a
      * Bundle containing the activity's previously frozen state, if there was one.
-     *
+     * <p>
      * This implementation initializes the activity, sets the layout, configures the toolbar,
      * retrieves Firebase authentication instance, and initializes UI elements.
      * It also sets an OnClickListener for the register button to initiate user registration.
@@ -51,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     /**
      * Registers a new user with the provided email and password using Firebase Authentication.
-     *
+     * <p>
      * This method retrieves the email and password from the respective EditText fields.
      * It then performs the following actions:
      * 1. **Input Validation:** Checks if the email or password fields are empty. If either is empty,
@@ -61,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
      * 3. **Success Handling:** If the user creation is successful, a success Toast message is displayed,
      *    and the current Activity is finished, returning the user to the previous Activity (likely the Login Activity).
      * 4. **Failure Handling:** If the user creation fails, a failure Toast message is displayed to the user.
-     *
+     * <p>
      * This method utilizes the `mAuth` Firebase Authentication instance to interact with the Firebase authentication service.
      *
      * @see FirebaseAuth#createUserWithEmailAndPassword(String, String)

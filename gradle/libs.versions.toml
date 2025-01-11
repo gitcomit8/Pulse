@@ -15,6 +15,9 @@ materialVersion = "1.9.0"
 playServicesAuth = "21.3.0"
 playServicesAuthVersion = "20.7.0"
 playServicesIdentity = "18.1.0"
+glide = "4.16.0"
+compiler = "4.16.0"
+impress = "0.0.1"
 
 [libraries]
 constraintlayout-v214 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
@@ -32,6 +35,9 @@ material-v190 = { module = "com.google.android.material:material", version.ref =
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-identity = { module = "com.google.android.gms:play-services-identity", version.ref = "playServicesIdentity" }
 play-services-auth-v2070 = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuthVersion" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "compiler" }
+impress = { group = "com.google.ar", name = "impress", version.ref = "impress" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

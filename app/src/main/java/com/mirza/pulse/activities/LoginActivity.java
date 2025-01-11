@@ -1,4 +1,4 @@
-package com.mirza.pulse;
+package com.mirza.pulse.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +20,8 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.mirza.pulse.MainActivity;
+import com.mirza.pulse.R;
 
 /**
  *  LoginActivity is responsible for handling user authentication.

@@ -1,5 +1,6 @@
 package com.mirza.pulse.adapters;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         return userList.size();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setUserList(List<User> newList) {
         userList = newList;
         if (newList.isEmpty()) {

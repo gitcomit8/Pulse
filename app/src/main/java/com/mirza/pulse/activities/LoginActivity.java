@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Authenticates the user with Firebase using their Google account credentials.
-     *
+     * <p>
      * This method takes a GoogleSignInAccount object, extracts the ID token, and uses it to
      * create Firebase credentials. It then attempts to sign in the user with these credentials.
      * Upon successful sign-in, it navigates to the MainActivity and finishes the current activity.
@@ -126,7 +126,7 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Attempts to log in a user with the provided email and password.
-     *
+     * <p>
      * This method retrieves the email and password from the respective EditText fields.
      * It performs basic input validation to ensure that both fields are not empty.
      * If the input is valid, it uses Firebase Authentication to attempt to sign in the user.

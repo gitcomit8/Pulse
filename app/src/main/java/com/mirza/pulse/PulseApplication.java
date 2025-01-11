@@ -4,7 +4,6 @@ import android.app.Application;
 import android.util.Log;
 
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
 
 /**
  * The {@code PulseApplication} class is the main application class for the Pulse application.

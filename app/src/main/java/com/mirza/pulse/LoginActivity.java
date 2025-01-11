@@ -21,6 +21,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+/**
+ *  LoginActivity is responsible for handling user authentication.
+ *  It provides functionality for users to log in using their email and password,
+ *  or through Google Sign-In. It also provides a link to the registration activity for new users.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
@@ -28,6 +33,16 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private ActivityResultLauncher<Intent> googleSignInLauncher;
 
+    /**
+     * Called when the activity is first created. This is where most initialization
+     * should go: calling setContentView(int) to inflate the activity's UI,
+     * using findViewById(int) to retrieve widgets in the UI that will be interacted with,
+     * setting up listeners for those widgets, and initializing any other required components.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +94,17 @@ public class LoginActivity extends AppCompatActivity {
         googleSignInLauncher.launch(signInIntent);
     }
 
+    /**
+     * Authenticates the user with Firebase using their Google account credentials.
+     *
+     * This method takes a GoogleSignInAccount object, extracts the ID token, and uses it to
+     * create Firebase credentials. It then attempts to sign in the user with these credentials.
+     * Upon successful sign-in, it navigates to the MainActivity and finishes the current activity.
+     * If sign-in fails, it displays a toast message indicating the failure.
+     *
+     * @param acct The GoogleSignInAccount object containing the user's Google account information,
+     *             specifically the ID token required for authentication.
+     */
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -96,6 +122,15 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * Attempts to log in a user with the provided email and password.
+     *
+     * This method retrieves the email and password from the respective EditText fields.
+     * It performs basic input validation to ensure that both fields are not empty.
+     * If the input is valid, it uses Firebase Authentication to attempt to sign in the user.
+     * On successful login, it displays a success message and navigates to the MainActivity.
+     * On failed login, it displays an authentication failure message.
+     */
     private void loginUser() {
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();

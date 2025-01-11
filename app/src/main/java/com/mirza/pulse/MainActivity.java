@@ -8,6 +8,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * The main activity of the application.
+ *
+ * This activity is the entry point for the application and is responsible for
+ * setting up the user interface and handling initial app logic.
+ * It utilizes EdgeToEdge to draw the app content behind system bars, and sets up
+ * insets handling to ensure content isn't obscured by system UI elements.
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

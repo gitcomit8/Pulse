@@ -1,6 +1,5 @@
 package com.mirza.pulse.adapters;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +42,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         Glide.with(holder.userImageView.getContext())
                 .load(user.getProfileImageUrl())
                 .placeholder(R.drawable.ic_default_user) // Optional: Placeholder image
+                .error(R.drawable.ic_default_user) // Optional: Error image
                 .into(holder.userImageView);
     }
 
@@ -51,7 +51,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         return userList.size();
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     public void setUserList(List<User> newList) {
         userList = newList;
         if (newList.isEmpty()) {

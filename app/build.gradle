@@ -30,6 +30,7 @@ android {
 }
 
 dependencies {
+    implementation libs.firebase.firestore.ktx
     implementation libs.play.services.auth.v2070
     implementation libs.play.services.identity
     implementation libs.play.services.auth

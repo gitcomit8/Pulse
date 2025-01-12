@@ -13,13 +13,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.mirza.pulse.R;
 import com.mirza.pulse.adapters.UserAdapter;
 import com.mirza.pulse.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class UserListActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class UserListActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private UserAdapter adapter; // Declare the adapter as a class member
     private List<User> users; // Declare the user list as a class member
+    private FirebaseFirestore db; // Declare Firestore
 
     private void showLoading() {
         progressBar.setVisibility(View.VISIBLE); // Correct constant
@@ -66,16 +68,16 @@ public class UserListActivity extends AppCompatActivity {
 
         // Set up the toolbar
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true); // Add back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Add back button
 
         // Set up the RecyclerView
         userRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Create a dummy list of users (replace this with actual data later)
+        // Initialize Firestore
+        db = FirebaseFirestore.getInstance();
+
+        // Create an empty list of users
         users = new ArrayList<>();
-        users.add(new User("user1", "user1@example.com", "User One", ""));
-        users.add(new User("user2", "user2@example.com", "User Two", ""));
-        users.add(new User("user3", "user3@example.com", "User Three", ""));
 
         // Create the adapter
         adapter = new UserAdapter(users);
@@ -100,7 +102,32 @@ public class UserListActivity extends AppCompatActivity {
             }
         });
         showLoading();
-        hideLoading();
+        // Load the users from Firestore
+        loadUsers();
+    }
+
+    private void loadUsers() {
+        db.collection("users") // Replace "users" with your collection name
+                .get()
+                .addOnCompleteListener(task -> {
+                    hideLoading();
+                    if (task.isSuccessful()) {
+                        users.clear();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            User user = document.toObject(User.class);
+                            users.add(user);
+                        }
+                        adapter.setUserList(users);
+                        if (users.isEmpty()) {
+                            showEmptyList();
+                        } else {
+                            hideEmptyList();
+                        }
+                    } else {
+                        // Handle errors
+                        showEmptyList();
+                    }
+                });
     }
 
     private void filterUsers(String text) {
